@@ -119,14 +119,14 @@ class ClashRoyale(commands.Cog):
         if r.status_code == 200:
             r = r.json()
             desc = f"""
-**Clan Tag**: `{r['tag']}`
-**Description**: `{r['description']}`
-**Location**: `{r['location']['name']}`
-**Members**: `{r['members']}`
-**Clan Score**: `{r['clanScore']}`
-**Clan War Trophies**: `{r['clanWarTrophies']}`
-**Required Trophies**: `{r['requiredTrophies']}`
-**Donations per Week**: `{r['donationsPerWeek']}`
+**Clan Tag**: {r['tag']}
+**Description**: {r['description']}
+**Location**: {r['location']['name']}
+**Members**: {r['members']}
+**Clan Score**: {r['clanScore']}
+**Clan War Trophies**: {r['clanWarTrophies']}
+**Required Trophies**: {r['requiredTrophies']}
+**Donations per Week**: {r['donationsPerWeek']}
 """
             em = discord.Embed(
                 title=f"Clash Royale clan `{r['name']}`",
