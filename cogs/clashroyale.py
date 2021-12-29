@@ -108,7 +108,7 @@ class ClashRoyale(commands.Cog):
         if r.status_code == 404:
             em = discord.Embed(
                 title="Here's how to find your clan tag",
-                color=colors.l_red
+                color=colors.m_red
             )
             em.set_image(url="https://i.imgur.com/VQYmehU.gif")
             tag = tag.replace("%23", "#")
