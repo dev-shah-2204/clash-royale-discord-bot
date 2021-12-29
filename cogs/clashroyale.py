@@ -60,7 +60,7 @@ class ClashRoyale(commands.Cog):
 **Three Crown Wins**: `{r['threeCrownWins']}`
 **Total Donations**: `{r['totalDonations']}`
 
-**Playing Since**: `{playing_since[:4]} years`                 
+**Playing Since**: `{(str(int(playing_since)/365))[:4]} years`                 
 """
                 em = discord.Embed(
                     title=f"Clash Royale profile of `{r['name']}`",
