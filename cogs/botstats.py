@@ -16,7 +16,7 @@ class BotStats(commands.Cog):
         elif latency > 20 and latency < 100:
             color = colors.l_yellow
         else:
-            color = colors.l_red
+            color = colors.m_red
         
         em = discord.Embed(
             title='Pong!',
