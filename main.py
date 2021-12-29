@@ -5,7 +5,8 @@ cogs = [
     'botstats',
     'developer',
     'events',
-    'clashroyale'
+    'clashroyale',
+    'error_handler'
 ]
 
 bot = ClashRoyaler(command_prefix="!!")
