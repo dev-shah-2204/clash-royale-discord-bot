@@ -1,7 +1,4 @@
-import discord 
-
-from discord.ext import commands 
-from utils import colors 
+from discord.ext import commands
 
 
 class Developer(commands.Cog):

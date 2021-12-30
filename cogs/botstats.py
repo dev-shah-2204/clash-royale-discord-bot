@@ -11,9 +11,9 @@ class BotStats(commands.Cog):
     @commands.command(name='ping', help="Shows the bot's ping.")
     async def ping(self, ctx):
         latency = round(self.bot.latency*1000)
-        if latency > 10 and latency < 20:
+        if 10 < latency < 20:
             color = colors.l_green
-        elif latency > 20 and latency < 100:
+        elif 20 < latency < 100:
             color = colors.l_yellow
         else:
             color = colors.m_red
