@@ -1,4 +1,5 @@
 import os
+
 from bot import ClashRoyaler
 
 cogs = [
@@ -10,6 +11,7 @@ cogs = [
 ]
 
 bot = ClashRoyaler(command_prefix="!!")
+bot.remove_command('help')
 
 for cog in cogs:
     if __name__ == "__main__":
@@ -17,5 +19,7 @@ for cog in cogs:
             bot.load_extension(f"cogs.{cog}")
         except Exception as e:
             print(e)
+
+bot.load_extension('jishaku')
 
 bot.run(os.environ.get('clash_royale_bot_token'))
