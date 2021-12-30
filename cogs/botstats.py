@@ -23,9 +23,9 @@ class BotStats(commands.Cog):
             description=f"{latency}ms",
             color=color
         )
-        
         await ctx.send(embed=em)
-        
+
+
     @commands.command(name='invite', help="Invite the bot to your server")
     async def invite(self, ctx):
         em = discord.Embed(
@@ -40,6 +40,27 @@ class BotStats(commands.Cog):
         await ctx.reply(embed=em)
     
 
+    @commands.command(name='help')
+    async def show_help(self, ctx):
+        desc = """
+**invite** - Invite the bot to your server
+*!!invite*
+
+**ping** - Show the bot's ping
+*!!ping*
+
+**profile** - Show a Clash Royale player's profile
+*!!profile #ABC123AB*
+
+**claninfo** - Show a Clash Royale clan's information
+*!!claninfo #ABC123AB*
+"""
+        em = discord.Embed(
+            title="Help is here!",
+            description=desc,
+            color=colors.l_blue
+        )
+        await ctx.send(embed=em)
 
 
 def setup(bot):
