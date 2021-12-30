@@ -22,7 +22,7 @@ class ClashRoyale(commands.Cog):
         else:
             tag = f"%23{tag}"
            
-        url = f'https://api.clashroyale.com/v1/players/{tag}'
+        url = f'https://proxy.royaleapi.dev/v1/players/{tag}'
         r = requests.get(
             url=url, 
             headers={
@@ -97,7 +97,7 @@ class ClashRoyale(commands.Cog):
         else:
             tag = f"%23{tag}"
            
-        url = f'https://api.clashroyale.com/v1/clans/{tag}'
+        url = f'https://proxy.royaleapi.dev/v1/clans/{tag}'
         r = requests.get(
             url=url, 
             headers={
