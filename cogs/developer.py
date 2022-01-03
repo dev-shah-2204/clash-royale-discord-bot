@@ -2,7 +2,7 @@ from discord.ext import commands
 
 
 class Developer(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: commands.AutoShardedBot):
         self.bot = bot 
         
     @commands.command(name='reloadcog', help="A developer command")

@@ -5,7 +5,7 @@ from discord.ext import commands
 
 
 class ErrorHandling(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.AutoShardedBot):
         self.bot = bot
 
     @commands.Cog.listener()

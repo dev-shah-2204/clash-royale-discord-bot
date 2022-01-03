@@ -8,7 +8,7 @@ from utils import colors
 
 
 class ClashRoyale(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: commands.AutoShardedBot):
         self.bot = bot
         self.key = os.getenv('CLASH_ROYALE_API_KEY')  # Get your's from https://developer.clashroyale.com/
         

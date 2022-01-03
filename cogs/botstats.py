@@ -5,7 +5,7 @@ from discord.ext import commands
 
 
 class BotStats(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: commands.AutoShardedBot):
         self.bot = bot
 
     @commands.command(name='ping', help="Shows the bot's ping.")
