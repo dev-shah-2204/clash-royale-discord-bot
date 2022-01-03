@@ -64,7 +64,7 @@ class ClashRoyale(commands.Cog):
                 em = discord.Embed(
                     title=f"Clash Royale profile of `{r['name']}`",
                     description=desc,
-                    color=random.choice(colors.colors)
+                    color=colors.l_blue
                 )
                 em.set_footer(text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar_url)
                 await ctx.send(embed=em)
@@ -79,7 +79,7 @@ class ClashRoyale(commands.Cog):
                 em = discord.Embed(
                     title=f"`{r['name']}`'s clan",
                     description=desc,
-                    color=random.choice(colors.colors)
+                    color=colors.l_blue
                 )
                 em.set_footer(text="For more details about the clan, run the 'claninfo' command")
                 await ctx.send(embed=em)
@@ -130,7 +130,7 @@ class ClashRoyale(commands.Cog):
             em = discord.Embed(
                 title=f"Clash Royale clan `{r['name']}`",
                 description=desc,
-                color=random.choice(colors.colors)
+                color=colors.l_blue
             )
             em.set_footer(text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar_url)
             await ctx.send(embed=em)
