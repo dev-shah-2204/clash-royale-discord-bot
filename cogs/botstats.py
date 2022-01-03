@@ -51,6 +51,7 @@ class BotStats(commands.Cog):
 
 **profile** - Show a Clash Royale player's profile
 *!!profile #ABC123AB*
+*!!profile #ABC123AB clan* (brings their clan stats)
 
 **claninfo** - Show a Clash Royale clan's information
 *!!claninfo #ABC123AB*
