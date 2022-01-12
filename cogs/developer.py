@@ -1,5 +1,7 @@
-from discord.ext import commands
+import discord
 
+from discord.ext import commands
+from utils import colors
 
 class Developer(commands.Cog):
     def __init__(self, bot: commands.AutoShardedBot):
@@ -33,7 +35,31 @@ class Developer(commands.Cog):
             self.bot.unload_extension(f"cogs.{cog}")
             await ctx.reply(f"Unloaded {cog} cog")
         except Exception as e:
-            await ctx.reply(f"Error!\n```{e}```") 
+            await ctx.reply(f"Error!\n```{e}```")
+
+
+    @commands.command(name='sendmessage', help="A developer command")
+    @commands.is_owner()
+    async def send_message(self, ctx, user_id, *, message):
+        em = discord.Embed(
+            title="Message from my developer",
+            description=message,
+            color=colors.l_red
+        )
+        owner = self.bot.get_user(self.bot.owner_id)
+        if owner is not None:
+            em.set_footer(text=f"For more information contant {owner}", icon_url=owner.avatar_url)
+
+        user = self.bot.get_user(user_id)
+        if user is None:
+            await ctx.send("User not found")
+            return
+
+        try:
+            await user.send(embed=em)
+        except discord.Forbidden:
+            await ctx.send("Forbidden.")
+
     
     
 def setup(bot):
