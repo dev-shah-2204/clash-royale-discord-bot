@@ -47,9 +47,10 @@ class ClashRoyale(commands.Cog):
                 
                 for item in r['badges']:
                     if item['name'] == 'Played1Year':
-                        playing_since = str(item['progress'])
+                        playing_since = f"{(str(int(item['progress'])/365))[:4]} years"
                         break                
-                
+
+
                 desc = f"""
 **Level**: `{r['expLevel']}`
 **Trophies**: `{r['trophies']}`
@@ -59,7 +60,7 @@ class ClashRoyale(commands.Cog):
 **Three Crown Wins**: `{r['threeCrownWins']}`
 **Total Donations**: `{r['totalDonations']}`
 
-**Playing Since**: `{(str(int(playing_since)/365))[:4]} years`                 
+**Playing Since**: `{playing_since}`                 
 """
                 em = discord.Embed(
                     title=f"Clash Royale profile of `{r['name']}`",
