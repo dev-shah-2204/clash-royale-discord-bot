@@ -20,7 +20,6 @@ class ClashRoyale(commands.Cog):
     @commands.command(name='profile', help='Get the information on a Clash Royale player.')
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def get_cr_profile(self, ctx, tag, args=None):
-        await ctx.send('hi')
         if tag.startswith('#'):
             tag = tag.replace('#', '%23')
         else:
