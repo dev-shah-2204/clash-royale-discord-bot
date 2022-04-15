@@ -1,6 +1,10 @@
 import os
 
+from dotenv import load_dotenv
 from bot import ClashRoyaler
+
+
+load_dotenv()
 
 cogs = [
     'botstats',
@@ -10,7 +14,7 @@ cogs = [
     'error_handler'
 ]
 
-bot = ClashRoyaler(command_prefix="!!")
+bot = ClashRoyaler(command_prefix=">")
 bot.remove_command('help')
 
 for cog in cogs:

@@ -3,8 +3,12 @@ import requests
 import random
 import discord
 
+from dotenv import load_dotenv
 from discord.ext import commands
 from utils import colors 
+
+
+load_dotenv()
 
 
 class ClashRoyale(commands.Cog):
@@ -16,11 +20,12 @@ class ClashRoyale(commands.Cog):
     @commands.command(name='profile', help='Get the information on a Clash Royale player.')
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def get_cr_profile(self, ctx, tag, args=None):
+        await ctx.send('hi')
         if tag.startswith('#'):
             tag = tag.replace('#', '%23')
         else:
             tag = f"%23{tag}"
-           
+
         url = f'https://proxy.royaleapi.dev/v1/players/{tag}'
         r = requests.get(
             url=url, 
@@ -28,7 +33,7 @@ class ClashRoyale(commands.Cog):
                 'Authorization': f'Bearer {self.key}'
                 }
             )
-        
+
         if r.status_code == 404:
             em = discord.Embed(
                 title='How to find your tag',
@@ -42,12 +47,13 @@ class ClashRoyale(commands.Cog):
         
         if r.status_code == 200:
             r = r.json()
-            if args is None:
+            print(r)
+            if not args:
                 playing_since = "Less than a year"  # Default value
-                
+
                 for item in r['badges']:
-                    if item['name'] == 'Played1Year':
-                        playing_since = f"{(str(int(item['progress'])/365))[:4]} years"
+                    if item['name'] == 'YearsPlayed':
+                        playing_since = f"{round(float(item['progress'])/365)} years"
                         break                
 
 
