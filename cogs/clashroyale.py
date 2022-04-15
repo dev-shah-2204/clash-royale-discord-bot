@@ -46,7 +46,6 @@ class ClashRoyale(commands.Cog):
         
         if r.status_code == 200:
             r = r.json()
-            print(r)
             if not args:
                 playing_since = "Less than a year"  # Default value
 
