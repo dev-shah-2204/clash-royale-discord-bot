@@ -75,6 +75,15 @@ class ClashRoyale(commands.Cog):
                 await ctx.send(embed=em)
                 
             elif args.lower() == 'clan':
+                if not r['clan']:
+                    em = discord.Embed(
+                        title="Error",
+                        description="Given user is not in a clan",
+                        color=colors.l_red
+                    )
+                    await ctx.send(embed=em)
+                    return
+
                 desc = f""" 
 **Clan Name**: `{r['clan']['name']}`
 **Clan Tag**: `{r['clan']['tag']}` 
